@@ -1,13 +1,11 @@
-import Navbar from 'components/Navbar'
+import BootstrapNavbar from 'components/BootstrapNavbar'
 
 const App = () => {
-
     return (
         <div>
-            <Navbar />
+            <BootstrapNavbar />
         </div>
     )
 }
-
 
 export default App

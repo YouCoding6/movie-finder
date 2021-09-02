@@ -1,15 +1,15 @@
 import BootstrapNavbar from 'components/BootstrapNavbar'
 import IndexMovies from 'components/IndexMovies'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const App = () => {
 
     // const apiKey = "97fa441e"
-
+    const [movies, setMovies] = useState([])
     const fetchAllMovies = async () => {
         const response = await fetch(`https://www.omdbapi.com/?s="ate"&type="movie"&apikey=97fa441e`)
-        const data = response.json()
-        data && console.log(data)
+        const data = await response.json()
+        setMovies(data.Search)
     }
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const App = () => {
     return (
         <div>
             <BootstrapNavbar />
-            <IndexMovies />
+            <IndexMovies movies={movies} />
         </div>
     )
 }

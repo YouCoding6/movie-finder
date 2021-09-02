@@ -1,12 +1,13 @@
+import MovieCard from 'components/MovieCard'
 
 
-
-
-const IndexMovies = () => {
-
-    return(
+const IndexMovies = ({ movies }) => {
+    movies && console.log('movies', movies)
+    console.log('movies', movies)
+    return (
         <div>
-            all movies
+            {movies && movies.map(movie =>
+                <MovieCard movie={movie} />)}
         </div>
     )
 }

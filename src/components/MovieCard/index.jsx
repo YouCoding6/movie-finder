@@ -1,19 +1,18 @@
-import { Card, Button } from 'react-bootstrap'
-
-
-
-
+import { Card, Button, Col } from 'react-bootstrap'
 
 const MovieCard = ({ movie }) => {
 
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={movie.Poster} />
-            <Card.Body>
-                <Card.Title>{movie.Title}</Card.Title>
-                <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-        </Card>
+        <Col md={3}>
+            <Card style={{ height: '25rem' }} >
+                <Card.Img style={{ height: '18rem' }} variant="top" src={movie.Poster} />
+                <Card.Body>
+                    <Card.Title className="h6">{movie.Title}</Card.Title>
+                    <Button className="btn btn-secondary mb-1 ">Read More</Button>
+                </Card.Body>
+            </Card>
+        </Col>
+
     )
 }
 

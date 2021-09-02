@@ -1,14 +1,16 @@
 import MovieCard from 'components/MovieCard'
-
-
+import { Container, Row } from 'react-bootstrap'
 const IndexMovies = ({ movies }) => {
     movies && console.log('movies', movies)
     console.log('movies', movies)
     return (
-        <div>
-            {movies && movies.map(movie =>
-                <MovieCard movie={movie} />)}
-        </div>
+        <Container>
+            <Row className="justify-content-center">
+                {movies && movies.map(movie =>
+                    <MovieCard movie={movie} />)}
+            </Row>
+        </Container>
+
     )
 }
 

@@ -16,5 +16,4 @@ const IndexMovies = ({ movies }) => {
     )
 }
 
-
 export default IndexMovies

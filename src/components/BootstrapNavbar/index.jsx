@@ -2,7 +2,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import Searchbar from 'components/Searchbar';
 
-const BootstrapNavbar = () => {
+const BootstrapNavbar = ({ setInput, fetchMovies }) => {
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -15,7 +15,7 @@ const BootstrapNavbar = () => {
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Searchbar />
+                        <Searchbar setInput={setInput} fetchMovies={fetchMovies} />
                     </Nav>
                 </Navbar.Collapse>
             </Container>

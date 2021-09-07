@@ -2,21 +2,10 @@ import { Form, FormControl, Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 
-const Searchbar = () => {
-
-    const [input, setInput] = useState()
+const Searchbar = ({ setInput, fetchMovies }) => {
 
     const handleInput = (e) => {
         setInput(e.target.value)
-    }
-
-    const fetchMovies = async () => {
-
-        const url = `https://www.omdbapi.com/?s=${input}&apikey=97fa441e`
-        const response = await fetch(url)
-        const data = await response.json()
-        console.log('data', data)
-
     }
 
     return (

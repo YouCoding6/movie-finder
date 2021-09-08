@@ -1,7 +1,7 @@
 import BootstrapNavbar from 'components/BootstrapNavbar'
 import IndexMovies from 'components/IndexMovies'
 import React, { useEffect, useState } from 'react'
-
+import AlertNotFoundMovies from 'components/AlertNotFoundMovies'
 const App = () => {
 
     const [choice, setChoice] = useState(true)
@@ -36,8 +36,7 @@ const App = () => {
             <BootstrapNavbar setInput={setInput} fetchMovies={fetchMovies} />
             {choice && <IndexMovies movies={movies} />}
             {!choice && movies && requestResponse == "True" && <IndexMovies movies={searchMovies} />}
-            {!choice && movies && requestResponse == "False" && <p>No results</p>}
-
+            {!choice && movies && requestResponse == "False" && <AlertNotFoundMovies />}
         </div>
     )
 }

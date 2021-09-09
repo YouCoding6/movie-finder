@@ -1,6 +1,7 @@
 import { Card, Button, Col } from 'react-bootstrap'
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, handleShow }) => {
+
 
     return (
         <Col md={3}>
@@ -8,11 +9,10 @@ const MovieCard = ({ movie }) => {
                 <Card.Img style={{ height: '18rem' }} variant="top" src={movie.Poster} />
                 <Card.Body>
                     <Card.Title className="h6">{movie.Title}</Card.Title>
-                    <Button className="btn btn-secondary mb-1 ">Read More</Button>
+                    <Button className="btn btn-secondary mb-1 " onClick={handleShow}>Read More</Button>
                 </Card.Body>
             </Card>
         </Col>
-
     )
 }
 

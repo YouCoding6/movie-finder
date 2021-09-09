@@ -1,6 +1,4 @@
 import { Form, FormControl, Button } from 'react-bootstrap';
-import { useState } from 'react';
-
 
 const Searchbar = ({ setInput, fetchMovies }) => {
 
@@ -12,11 +10,11 @@ const Searchbar = ({ setInput, fetchMovies }) => {
         <Form className="d-flex">
             <FormControl
                 type="search"
-                placeholder="Search"
+                placeholder="Enter a title"
                 className="mr-2"
                 aria-label="Search"
                 onChange={handleInput} />
-            <Button variant="outline-success" onClick={fetchMovies}>Search</Button>
+            <Button variant="outline-success" onClick={fetchMovies} className="ms-2">Search</Button>
         </Form>
     )
 }

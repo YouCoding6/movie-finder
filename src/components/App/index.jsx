@@ -35,8 +35,8 @@ const App = () => {
         <div>
             <BootstrapNavbar setInput={setInput} fetchMovies={fetchMovies} />
             {choice && <IndexMovies movies={movies} />}
-            {!choice && movies && requestResponse == "True" && <IndexMovies movies={searchMovies} />}
-            {!choice && movies && requestResponse == "False" && <AlertNotFoundMovies />}
+            {!choice && movies && requestResponse === "True" && <IndexMovies movies={searchMovies} />}
+            {!choice && movies && requestResponse === "False" && <AlertNotFoundMovies />}
         </div>
     )
 }

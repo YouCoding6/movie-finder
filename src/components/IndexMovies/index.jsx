@@ -6,20 +6,21 @@ import { useState } from 'react'
 
 const IndexMovies = ({ movies }) => {
     const [show, setShow] = useState(false)
+    const [movieInfo, setMovieInfo] = useState([])
     const handleShow = () => setShow(true)
     const handleClose = () => setShow(false)
     movies && console.log('movies', movies)
     console.log('movies', movies)
+
     return (
         <>
             <Container>
                 <Row className="justify-content-center mt-5">
                     {movies && movies.map(movie =>
-                        <MovieCard movie={movie} key={uuidv4()} handleShow={handleShow} />)}
+                        <MovieCard movie={movie} key={uuidv4()} handleShow={handleShow} setMovieInfo={setMovieInfo} />)}
                 </Row>
-                <ModalMovieInfo handleClose={handleClose} handleShow={handleShow} show={show} />
+                <ModalMovieInfo handleClose={handleClose} handleShow={handleShow} show={show} movieInfo={movieInfo} />
             </Container>
-
         </>
     )
 }

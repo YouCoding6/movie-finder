@@ -4,11 +4,8 @@ import { Container, Row } from 'react-bootstrap'
 import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react'
 
-const IndexMovies = ({ movies }) => {
-    const [show, setShow] = useState(false)
-    const [movieInfo, setMovieInfo] = useState([])
-    const handleShow = () => setShow(true)
-    const handleClose = () => setShow(false)
+const IndexMovies = ({ movies, handleShow, setMovieInfo, movieInfo }) => {
+
     movies && console.log('movies', movies)
     console.log('movies', movies)
 
@@ -17,9 +14,8 @@ const IndexMovies = ({ movies }) => {
             <Container>
                 <Row className="justify-content-center mt-5">
                     {movies && movies.map(movie =>
-                        <MovieCard movie={movie} key={uuidv4()} handleShow={handleShow} setMovieInfo={setMovieInfo} />)}
+                        <MovieCard movie={movie} key={uuidv4()} handleShow={handleShow} setMovieInfo={setMovieInfo} movieInfo={movieInfo} />)}
                 </Row>
-                <ModalMovieInfo handleClose={handleClose} handleShow={handleShow} show={show} movieInfo={movieInfo} />
             </Container>
         </>
     )

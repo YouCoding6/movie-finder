@@ -5,10 +5,10 @@ const ModalMovieInfo = ({ handleClose, show, movieInfo }) => {
 
     return (
 
-        movieInfo && <Modal show={show}>
+        <Modal show={show}>
             <Modal.Dialog>
                 <Modal.Header closeButton>
-                    <Modal.Title>{movieInfo.title}</Modal.Title>
+                    <Modal.Title>title</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>Modal body text goes here.</p>

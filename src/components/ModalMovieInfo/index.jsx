@@ -2,13 +2,12 @@ import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react'
 
 const ModalMovieInfo = ({ handleClose, show, movieInfo }) => {
-
     return (
 
         <Modal show={show}>
             <Modal.Dialog>
                 <Modal.Header closeButton>
-                    <Modal.Title>title</Modal.Title>
+                    <Modal.Title>{movieInfo.Title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>Modal body text goes here.</p>

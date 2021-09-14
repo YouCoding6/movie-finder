@@ -14,7 +14,7 @@ const App = () => {
 
     const [show, setShow] = useState(false)
     const [movieInfo, setMovieInfo] = useState(undefined)
-    const handleShow = () => setShow(true)
+
     const handleClose = () => setShow(false)
 
     const fetchAllMovies = async () => {
@@ -40,10 +40,10 @@ const App = () => {
     return (
         <div>
             <BootstrapNavbar setInput={setInput} fetchMovies={fetchMovies} />
-            {choice && <IndexMovies movies={movies} handleShow={handleShow} />}
+            {choice && <IndexMovies movies={movies} setShow={setShow} movieInfo={movieInfo} setMovieInfo={setMovieInfo} />}
             {!choice && movies && requestResponse === "True" && <IndexMovies movies={searchMovies} setMovieInfo={setMovieInfo} />}
             {!choice && movies && requestResponse === "False" && <AlertNotFoundMovies />}
-            <ModalMovieInfo handleClose={handleClose} handleShow={handleShow} show={show} movieInfo={movieInfo} />
+            <ModalMovieInfo handleClose={handleClose} show={show} movieInfo={movieInfo} />
         </div>
     )
 }

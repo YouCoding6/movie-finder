@@ -1,19 +1,22 @@
 import { Card, Button, Col } from 'react-bootstrap'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 // import { useState, useEffect } from 'react'
 
-const MovieCard = ({ movie, handleShow, setMovieInfo, movieInfo }) => {
+const MovieCard = ({ movie, setMovieInfo, movieInfo, setShow }) => {
+    const [movieId, setMovieId] = useState()
 
+    const handleShow = () => {
+        setShow(true)
+        readMore()
+    }
 
     const readMore = async () => {
         const url = `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=97fa441e`
         const response = await fetch(url)
         const data = await response.json()
         setMovieInfo(data)
-        data && console.log('data', data)
-        movieInfo && console.log('movieInfo', movieInfo)
-
     }
+
 
     return (
         <Col md={3}>

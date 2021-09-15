@@ -1,21 +1,20 @@
-import { Modal, Button } from 'react-bootstrap'
-import { useState } from 'react'
+import { Modal, Button, Card, Row, Col } from 'react-bootstrap'
+// import 'index' from 'ModalMovieInfo/index.css'
 
 const ModalMovieInfo = ({ handleClose, show, movieInfo }) => {
     return (
 
         <Modal show={show}>
-            <Modal.Dialog>
-                <Modal.Header closeButton>
-                    <Modal.Title>{movieInfo.Title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>Modal body text goes here.</p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                </Modal.Footer>
-            </Modal.Dialog>
+            <Row>
+                <Col md={6}>
+                    {movieInfo && <Card.Img variant="top" src={`${movieInfo.Poster}`} />}
+                </Col>
+                <Col md={6} class="">
+                    {movieInfo && <h4 class="mt-3">{movieInfo.Title}</h4>}
+                    {movieInfo && <p class="text-justify pe-2">{movieInfo.Plot}</p>}
+                    <Button variant="secondary" class="" onClick={handleClose}>Close</Button>
+                </Col>
+            </Row>
         </Modal>
     )
 }

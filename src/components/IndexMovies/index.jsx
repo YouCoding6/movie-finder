@@ -9,7 +9,7 @@ const IndexMovies = ({ movies, setMovieInfo, movieInfo, setShow }) => {
             <Container>
                 <Row className="justify-content-center mt-5">
                     {movies && movies.map(movie =>
-                        <MovieCard movie={movie} key={uuidv4()} setMovieInfo={setMovieInfo} movieInfo={movieInfo} setShow={setShow} />)}
+                        <MovieCard movie={movie} key={uuidv4()} setMovieInfo={setMovieInfo} setShow={setShow} />)}
                 </Row>
             </Container>
         </>

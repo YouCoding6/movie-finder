@@ -1,6 +1,6 @@
 import { Card, Button, Col } from 'react-bootstrap'
 
-const MovieCard = ({ movie, setMovieInfo, movieInfo, setShow }) => {
+const MovieCard = ({ movie, setMovieInfo, setShow }) => {
 
     const handleShow = () => {
         setShow(true)
@@ -16,12 +16,12 @@ const MovieCard = ({ movie, setMovieInfo, movieInfo, setShow }) => {
 
     return (
         <Col md={3}>
-            <Card style={{ height: '25rem' }} >
+            <Card style={{ height: '26rem' }} border="secondary" class="mb-5">
                 <Card.Img style={{ height: '18rem' }} variant="top" src={movie.Poster} />
-                <Card.Body>
+                <Card.Body style={{ height: '6rem' }}>
                     <Card.Title className="h6">{movie.Title}</Card.Title>
-                    <Button className="btn btn-secondary mb-1 read-more " onClick={handleShow}>Read More</Button>
                 </Card.Body>
+                <Button style={{ width: '7rem' }} className="btn btn-secondary" onClick={handleShow}>Read More</Button>
             </Card>
         </Col >
     )

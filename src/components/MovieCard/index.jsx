@@ -1,9 +1,6 @@
 import { Card, Button, Col } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
-// import { useState, useEffect } from 'react'
 
 const MovieCard = ({ movie, setMovieInfo, movieInfo, setShow }) => {
-    const [movieId, setMovieId] = useState()
 
     const handleShow = () => {
         setShow(true)
@@ -16,7 +13,6 @@ const MovieCard = ({ movie, setMovieInfo, movieInfo, setShow }) => {
         const data = await response.json()
         setMovieInfo(data)
     }
-
 
     return (
         <Col md={3}>

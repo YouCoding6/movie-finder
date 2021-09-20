@@ -8,7 +8,6 @@ const App = () => {
     const [choice, setChoice] = useState(true)
     const [input, setInput] = useState()
     const [requestResponse, setRequestResponse] = useState()
-    // const apiKey = "97fa441e"
     const [movies, setMovies] = useState([])
     const [searchMovies, setSearchMovies] = useState([])
 
@@ -30,8 +29,6 @@ const App = () => {
         setSearchMovies(data.Search)
         setChoice(false)
         setRequestResponse(data.Response)
-        console.log('data', data)
-        console.log('response', requestResponse)
     }
 
     useEffect(() => {

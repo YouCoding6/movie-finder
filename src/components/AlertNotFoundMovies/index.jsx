@@ -7,7 +7,6 @@ const AlertNotFoundMovies = () => {
                 No result found, try another keyword !
             </Alert>
         </Container>
-
     )
 }
 

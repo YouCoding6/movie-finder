@@ -1,5 +1,5 @@
 import { Card, Button, Col } from 'react-bootstrap'
-
+import 'components/MovieCard/index.css'
 const MovieCard = ({ movie, setMovieInfo, setShow }) => {
 
     const handleShow = () => {
@@ -16,9 +16,9 @@ const MovieCard = ({ movie, setMovieInfo, setShow }) => {
 
     return (
         <Col md={3}>
-            <Card style={{ height: '26rem' }} border="secondary" class="mb-5">
+            <Card style={{ height: '25rem' }} border="white" class="movie-card mb-3">
                 <Card.Img style={{ height: '18rem' }} variant="top" src={movie.Poster} />
-                <Card.Body style={{ height: '6rem' }}>
+                <Card.Body style={{ height: '4rem' }}>
                     <Card.Title className="h6">{movie.Title}</Card.Title>
                 </Card.Body>
                 <Button style={{ width: '7rem' }} className="btn btn-secondary" onClick={handleShow}>Read More</Button>

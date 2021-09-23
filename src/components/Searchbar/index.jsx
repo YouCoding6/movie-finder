@@ -3,6 +3,7 @@ import { Form, FormControl, Button } from 'react-bootstrap';
 const Searchbar = ({ setInput, fetchMovies }) => {
 
     const handleInput = (e) => {
+        e.preventDefault()
         setInput(e.target.value)
     }
 

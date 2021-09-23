@@ -16,7 +16,7 @@ const MovieCard = ({ movie, setMovieInfo, setShow }) => {
 
     return (
         <Col md={3}>
-            <Card style={{ height: '25rem' }} border="white" class="movie-card mb-3">
+            <Card style={{ height: '25rem', margin: '1rem' }} border="white" className="movie-card">
                 <Card.Img style={{ height: '18rem' }} variant="top" src={movie.Poster} />
                 <Card.Body style={{ height: '4rem' }}>
                     <Card.Title className="h6">{movie.Title}</Card.Title>

@@ -35,13 +35,13 @@ const App = () => {
         fetchAllMovies()
     }, [])
     return (
-        <div>
+        <>
             <BootstrapNavbar setInput={setInput} fetchMovies={fetchMovies} />
             {choice && <IndexMovies movies={movies} setShow={setShow} movieInfo={movieInfo} setMovieInfo={setMovieInfo} />}
             {!choice && movies && requestResponse === "True" && <IndexMovies movies={searchMovies} setShow={setShow} movieInfo={movieInfo} setMovieInfo={setMovieInfo} />}
             {!choice && movies && requestResponse === "False" && <AlertNotFoundMovies />}
             <ModalMovieInfo handleClose={handleClose} show={show} movieInfo={movieInfo} />
-        </div>
+        </>
     )
 }
 

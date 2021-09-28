@@ -1,26 +1,18 @@
+import React, { useState } from 'react'
 import BootstrapNavbar from 'components/BootstrapNavbar'
-import IndexMovies from 'components/IndexMovies'
-import ModalMovieInfo from 'components/ModalMovieInfo'
-import React, { useEffect, useState } from 'react'
-import AlertNotFoundMovies from 'components/AlertNotFoundMovies'
+import Home from 'pages/Home'
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom';
+
 const App = () => {
 
-    const [choice, setChoice] = useState(true)
     const [input, setInput] = useState()
     const [requestResponse, setRequestResponse] = useState()
-    const [movies, setMovies] = useState([])
+    const [choice, setChoice] = useState(true)
     const [searchMovies, setSearchMovies] = useState([])
-
-    const [show, setShow] = useState(false)
-    const [movieInfo, setMovieInfo] = useState(undefined)
-
-    const handleClose = () => setShow(false)
-
-    const fetchAllMovies = async () => {
-        const response = await fetch(`https://www.omdbapi.com/?s="ate"&type="movie"&apikey=97fa441e`)
-        const data = await response.json()
-        setMovies(data.Search)
-    }
 
     const fetchMovies = async () => {
         const url = `https://www.omdbapi.com/?s=${input}&apikey=97fa441e`
@@ -31,16 +23,16 @@ const App = () => {
         setRequestResponse(data.Response)
     }
 
-    useEffect(() => {
-        fetchAllMovies()
-    }, [])
     return (
         <>
-            <BootstrapNavbar setInput={setInput} fetchMovies={fetchMovies} />
-            {choice && <IndexMovies movies={movies} setShow={setShow} movieInfo={movieInfo} setMovieInfo={setMovieInfo} />}
-            {!choice && movies && requestResponse === "True" && <IndexMovies movies={searchMovies} setShow={setShow} movieInfo={movieInfo} setMovieInfo={setMovieInfo} />}
-            {!choice && movies && requestResponse === "False" && <AlertNotFoundMovies />}
-            <ModalMovieInfo handleClose={handleClose} show={show} movieInfo={movieInfo} />
+            <Router>
+                <BootstrapNavbar setInput={setInput} fetchMovies={fetchMovies} />
+                <Switch>
+                    <Route>
+                        <Home path="/" input={input} choice={choice} requestResponse={requestResponse} searchMovies={searchMovies} />
+                    </Route>
+                </Switch>
+            </Router>
         </>
     )
 }

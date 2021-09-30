@@ -15,7 +15,7 @@ const Searchbar = ({ setInput, fetchMovies }) => {
                 className="mr-2"
                 aria-label="Search"
                 onChange={handleInput} />
-            <Button variant="outline-success" onClick={fetchMovies} className="ms-2">Search</Button>
+            <Button variant="outline-secondary" onClick={fetchMovies} className="ms-2">Search</Button>
         </Form>
     )
 }
